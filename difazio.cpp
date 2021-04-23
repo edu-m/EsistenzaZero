@@ -6,12 +6,18 @@ main()
     double a,b;
     int cont;
     do{
-        std::cin>>a;
-        std::cin>>b;
-        std::cin>>cont;
-        //std::cout<<"f(a)= "<<func(a)<<std::endl;
-        //std::cout<<"f(b)= "<<func(b)<<std::endl;
-    }while(func(a)*func(b)>0 || a==b || cont<=0); //l'intervallo non deve essere nullo (a!=b) e la precisione deve essere un numero valido. Ovviamente la funzione deve cambiare di segno
+        using namespace std;
+        cout<<"Inserisci il valore 'a' dell'intervallo> ";
+        cin>>a;
+        cout<<"Inserisci il valore 'b' dell'intervallo> ";
+        cin>>b;
+        cout<<"Inserisci il numero di iterazioni> ";
+        cin>>cont;
+        cout<<"f(a)= "<<func(a)<<endl;
+        cout<<"f(b)= "<<func(b)<<endl;
+        cout<<"Premi qualunque tasto per procedere";
+        system("PAUSE>NUL");
+    }while(func(a)*func(b)>0 || a==b || cont<=0);
     
     difazio(a,b,cont);
     return 0;
