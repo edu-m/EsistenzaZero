@@ -1,5 +1,6 @@
 #include <iostream>
 #include "func.h"
+#define CONDITION func(a)*func(b)>0 || a==b || cont<=0
 
 main()
 {
@@ -15,10 +16,11 @@ main()
         cin>>cont;
         cout<<"f(a)= "<<func(a)<<endl;
         cout<<"f(b)= "<<func(b)<<endl;
-        cout<<"Premi qualunque tasto per procedere";
-        system("PAUSE>NUL");
-    }while(func(a)*func(b)>0 || a==b || cont<=0);
-    
+        if(CONDITION) cout<<"Input non valido"<<endl;
+    }while(CONDITION);
+
+    std::cout<<"Premi qualunque tasto per procedere";
+    system("PAUSE>NUL");
     difazio(a,b,cont);
     return 0;
 }
