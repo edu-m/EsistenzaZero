@@ -19,7 +19,7 @@ main()
         if(CONDITION) cout<<"Input non valido"<<endl;
     }while(CONDITION);
 
-    std::cout<<"Premi qualunque tasto per procedere";
+    std::cout<<"Premi qualunque tasto per procedere"<<std::endl;
     system("PAUSE>NUL");
     difazio(a,b,cont);
     return 0;
