@@ -1,5 +1,6 @@
 #include <utility>
 #define CURRENT_ITERATION "x= "<<m<<", "<<"f(x)="<<fm<<std::endl
+#define FUNC (x*x)-3 //inserire qui la legge della funzione
 
 double difazio(double, double, double);
 double func(double);
@@ -26,5 +27,5 @@ double difazio(double a, double b, double target)
 
 double func(double x)
 {
-    return (x*x)-3; //inserire qui la legge della funzione
+    return FUNC; 
 }
