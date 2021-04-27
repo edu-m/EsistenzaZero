@@ -12,7 +12,7 @@ double difazio(double a, double b, double target)
     double fm=func(m); 
     if(cap>0)
     {
-        if(fm==target)     {std::cout<<CURRENT_ITERATION; return fm;}                         //se è uguale al target siamo fortunati, non c'è bisogno di procedere
+        if(fm==target)     {std::cout<<CURRENT_ITERATION; return fm;}                                //se è uguale al target siamo fortunati, non c'è bisogno di procedere
         else if(fm>target) {cap--; std::cout<<CURRENT_ITERATION; return difazio(a,m,target);}       //consideriamo la funzione tra "a" e il punto medio tra "a" e "b"
         else               {cap--; std::cout<<CURRENT_ITERATION; return difazio(m,b,target);}      //consideriamo la funzione tra il punto medio tra "a" e "b" e "b"
     }
