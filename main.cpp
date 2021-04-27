@@ -22,5 +22,6 @@ main()
     std::cout<<"Premi qualunque tasto per procedere"<<std::endl;
     system("PAUSE>NUL");
     difazio(a,b,target);
+    system("PAUSE>NUL");
     return 0;
 }
