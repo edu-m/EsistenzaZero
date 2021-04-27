@@ -1,21 +1,27 @@
 #include <utility>
+#define CURRENT_ITERATION "x= "<<m<<", "<<"f(x)="<<fm<<std::endl
 
-double difazio(double, double, int);
+double difazio(double, double, double);
 double func(double);
 
 
-double difazio(double a, double b, int c)
+double difazio(double a, double b, double target)
 {
-    if(b<a) std::swap(b, a);
+    static int cap=50;
     double m=(a+b)/2;
     double fm=func(m); 
-    if(c>=0)
+    if(cap>0)
     {
-        if(fm==0)     {std::cout<<fm<<std::endl; return fm;}                 //se fa 0 siamo fortunati, non c'è bisogno di procedere
-        else if(fm<0) {std::cout<<fm<<std::endl; return difazio(a,m,--c);}  //consideriamo la funzione tra "a" e il punto medio tra "a" e "b"
-        else          {std::cout<<fm<<std::endl; return difazio(m,b,--c);} //consideriamo la funzione tra il punto medio tra "a" e "b" e "b"
+        if(fm==target)     {std::cout<<CURRENT_ITERATION; return fm;}                         //se è uguale al target siamo fortunati, non c'è bisogno di procedere
+        else if(fm>target) {cap--; std::cout<<CURRENT_ITERATION; return difazio(a,m,target);}       //consideriamo la funzione tra "a" e il punto medio tra "a" e "b"
+        else               {cap--; std::cout<<CURRENT_ITERATION; return difazio(m,b,target);}      //consideriamo la funzione tra il punto medio tra "a" e "b" e "b"
     }
-    else return fm;
+    else
+    {
+        std::cout<<CURRENT_ITERATION;
+        //std::cout<<"Iterazione interrotta, valore approssimato"<<std::endl;  
+        return fm;
+    }
 }
 
 double func(double x)
