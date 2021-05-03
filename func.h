@@ -5,10 +5,10 @@
 #define FUNC (x * x) - 3 //inserire qui la legge della funzione
 #define PRECISION 0.000015
 
-double difazio(double, double, double);
+double eval(double, double, double);
 double func(double);
 
-double difazio(double a, double b, double target)
+double eval(double a, double b, double target)
 {
     static int cap = 25;
     double m = (a + b) / 2;
@@ -25,13 +25,13 @@ double difazio(double a, double b, double target)
         {
             cap--;
             std::cout << CURRENT_ITERATION;
-            return difazio(a, m, target);
+            return eval(a, m, target);
         } //consideriamo la funzione tra "a" e il punto medio tra "a" e "b"
         else
         {
             cap--;
             std::cout << CURRENT_ITERATION;
-            return difazio(m, b, target);
+            return eval(m, b, target);
         } //consideriamo la funzione tra il punto medio tra "a" e "b" e "b"
     }
     else
